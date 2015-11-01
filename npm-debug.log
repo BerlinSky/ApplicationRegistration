@@ -1,0 +1,71 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '--save', 'gulp03.9.0' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.34
+4 warn package.json StartKitWithGulp@1.0.0 No description
+5 warn package.json StartKitWithGulp@1.0.0 No repository field.
+6 warn package.json StartKitWithGulp@1.0.0 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'gulp03.9.0', null ]
+9 verbose cache add name=undefined spec="gulp03.9.0" args=["gulp03.9.0",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'gulp03.9.0',
+10 verbose parsed url   path: 'gulp03.9.0',
+10 verbose parsed url   href: 'gulp03.9.0' }
+11 silly lockFile d34b411c-gulp03-9-0 gulp03.9.0
+12 verbose lock gulp03.9.0 /Users/Scarecrow/.npm/d34b411c-gulp03-9-0.lock
+13 silly lockFile d34b411c-gulp03-9-0 gulp03.9.0
+14 silly lockFile d34b411c-gulp03-9-0 gulp03.9.0
+15 verbose addNamed [ 'gulp03.9.0', '' ]
+16 verbose addNamed [ null, '*' ]
+17 silly lockFile fe6005ae-gulp03-9-0 gulp03.9.0@
+18 verbose lock gulp03.9.0@ /Users/Scarecrow/.npm/fe6005ae-gulp03-9-0.lock
+19 silly addNameRange { name: 'gulp03.9.0', range: '*', hasData: false }
+20 verbose request where is /gulp03.9.0
+21 verbose request registry https://registry.npmjs.org/
+22 verbose request id 42719eb266e4e1dd
+23 verbose url raw /gulp03.9.0
+24 verbose url resolving [ 'https://registry.npmjs.org/', './gulp03.9.0' ]
+25 verbose url resolved https://registry.npmjs.org/gulp03.9.0
+26 verbose request where is https://registry.npmjs.org/gulp03.9.0
+27 info trying registry request attempt 1 at 15:10:21
+28 http GET https://registry.npmjs.org/gulp03.9.0
+29 http 404 https://registry.npmjs.org/gulp03.9.0
+30 silly registry.get cb [ 404,
+30 silly registry.get   { 'content-type': 'application/json',
+30 silly registry.get     'cache-control': 'max-age=0',
+30 silly registry.get     'content-length': '2',
+30 silly registry.get     'accept-ranges': 'bytes',
+30 silly registry.get     date: 'Sat, 31 Oct 2015 22:10:22 GMT',
+30 silly registry.get     via: '1.1 varnish',
+30 silly registry.get     age: '0',
+30 silly registry.get     connection: 'keep-alive',
+30 silly registry.get     'x-served-by': 'cache-sjc3127-SJC',
+30 silly registry.get     'x-cache': 'MISS',
+30 silly registry.get     'x-cache-hits': '0',
+30 silly registry.get     'x-timer': 'S1446329421.926945,VS0,VE349' } ]
+31 silly lockFile fe6005ae-gulp03-9-0 gulp03.9.0@
+32 silly lockFile fe6005ae-gulp03-9-0 gulp03.9.0@
+33 error 404 Not Found
+33 error 404
+33 error 404 'gulp03.9.0' is not in the npm registry.
+33 error 404 You should bug the author to publish it
+33 error 404 It was specified as a dependency of 'StartKitWithGulp'
+33 error 404
+33 error 404 Note that you can also install from a
+33 error 404 tarball, folder, or http url, or git url.
+34 error System Darwin 14.5.0
+35 error command "node" "/usr/local/bin/npm" "install" "--save" "gulp03.9.0"
+36 error cwd /Users/Scarecrow/Documents/5. Projects/StartKitWithGulp
+37 error node -v v0.10.34
+38 error npm -v 1.4.28
+39 error code E404
+40 verbose exit [ 1, true ]
