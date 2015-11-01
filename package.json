@@ -17,5 +17,8 @@
     "gulp-open": "^1.0.0",
     "gulp-sass": "^2.1.0",
     "gulp-watch": "^4.3.5"
+  },
+  "devDependencies": {
+    "gulp-eslint": "^1.0.0"
   }
 }

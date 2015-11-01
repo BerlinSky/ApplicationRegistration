@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var connect = require('gulp-connect'); 
 var open = require('gulp-open'); 
 var sass = require('gulp-sass');
+var eslint = require('gulp-eslint'); 
 
 var config = {
 	port: 9018,
@@ -11,7 +12,7 @@ var config = {
 	path: {
 		html: './src/*.html',
 		sass: './src/sass/*.scss',
-		js: './src/js/*.js',
+		js: './src/js/**/*.js',
 		src: './src',
 		dist: './dist'
 	}
@@ -49,15 +50,23 @@ gulp.task('sass', function () {
 
 gulp.task('js', function () {
   gulp.src(config.path.js)
+  	.on('error', console.error.bind(console))
     .pipe(gulp.dest(config.path.dist + '/js'))
 		.pipe(connect.reload());
 });
 
+gulp.task('eslint', function() {
+	return gulp.src(config.path.js)
+	  .pipe(eslint({config: 'eslint.config.json'}))
+	  .pipe(eslint.format())
+	  .pipe(eslint.failAfterError());
+});
+
 gulp.task('watch', function() {
-	gulp.watch(config.path.src + '/**/*.scss', ['sass']);
-	gulp.watch(config.path.src + '/**/*.js', ['js']);
+	gulp.watch(config.path.sass, ['sass']);
+	gulp.watch(config.path.js, ['js', 'eslint']);
 	gulp.watch(config.path.src + '/**/*.html', ['html']);
 });
 
-gulp.task('default', ['sass', 'html', 'js', 'open', 'watch']);
+gulp.task('default', ['sass', 'html', 'js', 'eslint', 'open', 'watch']);
 
