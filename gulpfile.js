@@ -11,6 +11,7 @@ var config = {
 	path: {
 		html: './src/*.html',
 		sass: './src/sass/*.scss',
+		js: './src/js/*.js',
 		src: './src',
 		dist: './dist'
 	}
@@ -46,10 +47,17 @@ gulp.task('sass', function () {
 		.pipe(connect.reload());
 });
 
+gulp.task('js', function () {
+  gulp.src(config.path.js)
+    .pipe(gulp.dest(config.path.dist + '/js'))
+		.pipe(connect.reload());
+});
+
 gulp.task('watch', function() {
 	gulp.watch(config.path.src + '/**/*.scss', ['sass']);
+	gulp.watch(config.path.src + '/**/*.js', ['js']);
 	gulp.watch(config.path.src + '/**/*.html', ['html']);
 });
 
-gulp.task('default', ['sass', 'sass', 'open', 'watch']);
+gulp.task('default', ['sass', 'html', 'js', 'open', 'watch']);
 
