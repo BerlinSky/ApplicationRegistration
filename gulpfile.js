@@ -1,19 +1,21 @@
 "use strict";
 
 var gulp = require('gulp');
-var connect = require('gulp-connect'); //Runs a local dev server
-var open = require('gulp-open'); //Open a URL in a web browser
+var connect = require('gulp-connect'); 
+var open = require('gulp-open'); 
+var sass = require('gulp-sass');
 
 var config = {
 	port: 9018,
 	devBaseUrl: 'http://localhost',
 	path: {
 		html: './src/*.html',
+		sass: './src/sass/*.scss',
+		src: './src',
 		dist: './dist'
 	}
 };
 
-//Start a local development server
 gulp.task('connect', function() {
 	connect.server({
 		root: ['dist'],
@@ -37,10 +39,17 @@ gulp.task('html', function() {
 		.pipe(connect.reload());
 });
 
-
-gulp.task('watch', function() {
-	gulp.watch(config.path.html, ['html']);
+gulp.task('sass', function () {
+  gulp.src(config.path.sass)
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest(config.path.dist + '/css'))
+		.pipe(connect.reload());
 });
 
-gulp.task('default', ['html', 'open', 'watch']);
+gulp.task('watch', function() {
+	gulp.watch(config.path.src + '/**/*.scss', ['sass']);
+	gulp.watch(config.path.src + '/**/*.html', ['html']);
+});
+
+gulp.task('default', ['sass', 'sass', 'open', 'watch']);
 
