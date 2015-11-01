@@ -4,14 +4,33 @@ var gulp = require('gulp');
 var connect = require('gulp-connect'); 
 var open = require('gulp-open'); 
 var sass = require('gulp-sass');
+var concat = require('gulp-concat'); 
 var eslint = require('gulp-eslint'); 
 
 var config = {
 	port: 9018,
 	devBaseUrl: 'http://localhost',
 	path: {
-		html: './src/*.html',
+		html: './src/**/*.html',
+		image: './src/images/*.*',
 		sass: './src/sass/*.scss',
+		css: [
+  		'bower_components/bootstrap/dist/css/bootstrap.min.css',
+  		'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
+  		'bower_components/ui-select/dist/select.min.css',
+  		'bower_components/ng-tags-input/ng-tags-input.min.css'
+  	],
+  	jslib: [
+			'bower_components/jquery/dist/jquery.min.js',
+			'bower_components/bootstrap/dist/js/bootstrap.min.js',
+			'bower_components/jquery.easing/jquery.easing.min.js',
+			'bower_components/angular/angular.js',
+			'bower_components/angular-route/angular-route.min.js',
+			'bower_components/angular-animate/angular-animate.min.js',
+			'bower_components/angular-sanitize/angular-sanitize.min.js',
+			'bower_components/ui-select/dist/select.min.js',
+			'bower_components/ng-tags-input/ng-tags-input.min.js'
+  	],
 		js: './src/js/**/*.js',
 		src: './src',
 		dist: './dist'
@@ -41,11 +60,28 @@ gulp.task('html', function() {
 		.pipe(connect.reload());
 });
 
+gulp.task('image', function() {
+	gulp.src(config.path.image)
+		.pipe(gulp.dest(config.path.dist + '/images'))
+		.pipe(connect.reload());	
+});
+
+gulp.task('css', function() {
+	gulp.src(config.path.css)
+		.pipe(concat('lib.css'))
+		.pipe(gulp.dest(config.path.dist + '/css'));
+});
+
 gulp.task('sass', function () {
   gulp.src(config.path.sass)
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest(config.path.dist + '/css'))
 		.pipe(connect.reload());
+});
+
+gulp.task('jslib', function() {
+	gulp.src(config.path.jslib)
+		.pipe(gulp.dest(config.path.dist + '/js'));
 });
 
 gulp.task('js', function () {
@@ -68,5 +104,5 @@ gulp.task('watch', function() {
 	gulp.watch(config.path.src + '/**/*.html', ['html']);
 });
 
-gulp.task('default', ['sass', 'html', 'js', 'eslint', 'open', 'watch']);
+gulp.task('default', ['image', 'css', 'sass', 'html', 'jslib', 'js', 'eslint', 'open', 'watch']);
 

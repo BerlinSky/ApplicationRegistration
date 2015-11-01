@@ -1,5 +1,13 @@
-"use strict";
+$(function() {
+  $('a.page-scroll').bind('click', function(event) {
+    var $anchor = $(this);
+    $('html, body').stop().animate({
+      scrollTop: $($anchor.attr('href')).offset().top
+    }, 1500, 'easeInOutExpo');
+    event.preventDefault();
+  });
 
-console.log('start page here.');
-
-var adInfo = 0;
+  $('body').scrollspy({
+    target: '.navbar-fixed-top'
+  })
+});

@@ -1,0 +1,28 @@
+{
+  "name": "Berlin Sky",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "PY"
+  ],
+  "license": "ISC",
+  "homepage": "none",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-animate": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "angular-sanitize": "~1.4.7",
+    "angular": "~1.4.7",
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.4.0",
+    "ng-tags-input": "~3.0.0",
+    "jquery.easing": "git://github.com/gdsmith/jquery.easing.git#~1.3.2"
+  }
+}
