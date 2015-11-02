@@ -15,10 +15,13 @@ var config = {
 		image: './src/images/*.*',
 		sass: './src/sass/*.scss',
 		css: [
-  		'bower_components/bootstrap/dist/css/bootstrap.min.css',
-  		'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
+			'bower_components/bootstrap/dist/css/bootstrap.min.css',
+			'bower_components/font-awesome/css/font-awesome.min.css',
   		'bower_components/ui-select/dist/select.min.css',
   		'bower_components/ng-tags-input/ng-tags-input.min.css'
+  	],
+  	font: [
+  		'bower_components/font-awesome/fonts/*.*',
   	],
   	jslib: [
 			'bower_components/jquery/dist/jquery.min.js',
@@ -66,9 +69,14 @@ gulp.task('image', function() {
 		.pipe(connect.reload());	
 });
 
-gulp.task('css', function() {
+gulp.task('font', function() {
+	gulp.src(config.path.font)
+		.pipe(gulp.dest(config.path.dist + '/fonts'));
+});
+
+gulp.task('css', ['font'], function() {
 	gulp.src(config.path.css)
-		.pipe(concat('lib.css'))
+	//	.pipe(concat('lib.css'))
 		.pipe(gulp.dest(config.path.dist + '/css'));
 });
 
