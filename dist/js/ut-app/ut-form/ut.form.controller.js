@@ -1,6 +1,6 @@
-"use strict";
-
 (function(module){
+
+	"use strict";
 
 	var UtFormController = function (formDataService, $location) {
 		var model = this;

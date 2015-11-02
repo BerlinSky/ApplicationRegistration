@@ -1,12 +1,13 @@
-"use strict";
 
 (function() {
+
+  "use strict";
 
   var module = angular.module("ut.app", ["ngRoute", "ngAnimate", "ut.search", "ut.table", "ut.form"]);
 
     var routes = [
       { url: "/", settings: { templateUrl: "template/landing.html" } },
-      { url: "/registration", settings: {templateUrl: "template/app-registration.html"}}
+      { url: "/registration", settings: { templateUrl: "template/app-registration.html" } }
     ];
 
     var registerRoutes = function($routeProvider) {

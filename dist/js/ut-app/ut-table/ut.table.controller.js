@@ -1,6 +1,6 @@
-"use strict";
-
 (function(module){
+
+  "use strict";
 
   var UtTableController = function(tableDataService, searchDataService, $http, $log) {
     var model = this;

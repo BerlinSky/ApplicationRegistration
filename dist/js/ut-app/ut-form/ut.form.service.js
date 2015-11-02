@@ -1,6 +1,6 @@
-"use strict";
-
 (function(module) {
+
+  "use strict";
 
   var formDataService = function() {
 

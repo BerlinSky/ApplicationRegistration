@@ -1,6 +1,5 @@
-"use strict";
-
 (function() {
+	"use strict";
 
   var module = angular.module("ut.search", ['ngAnimate', 'ngSanitize', 'ui.select', 'ut.table']);
 

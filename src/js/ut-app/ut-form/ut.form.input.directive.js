@@ -1,5 +1,7 @@
 (function (module) {
    
+    "use strict";
+   
     var fetchFormElement = function (element) {
         var input = element.querySelector("input, textarea, select");
         var type = input.getAttribute("type");

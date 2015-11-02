@@ -1,5 +1,7 @@
 (function (module) {
 
+  "use strict";
+
   var utHighlight = function() {
     var linker = function(scope, element, attrs) {
       element 

@@ -1,6 +1,5 @@
-"use strict";
-
 (function(module){
+  "use strict";
 
   var UtSearchController = function(searchDataService, tableDataService, $http, $log) {
     var model = this;
