@@ -244,16 +244,18 @@
 
               <h3 class="text-center">View Registration</h3>
 
-
-
               <div ut-input>
                 <label class="ut-label" for="firstName">First name</label>
-                <input class="ut-text-input" type="text" id="firstName" name="firstName" required placeholder="First name" ng-model="modelTable.editedArtist.firstName">
+                <input class="ut-text-input" type="text" id="firstName" name="firstName"
+                min="2" max="50" required placeholder="First name" 
+                ng-model="modelTable.editedArtist.firstName">
               </div>
 
               <div ut-input>
                 <label for="lastName">Last name</label>
-                <input type="text" id="lastName" name="lastName" required placeholder="Last name" ng-model="modelTable.editedArtist.lastName">
+                <input type="text" id="lastName" name="lastName" 
+                min="2" max="50" required placeholder="Last name" 
+                ng-model="modelTable.editedArtist.lastName">
               </div>
 
               <div ut-input>

@@ -3,7 +3,7 @@
 
   "use strict";
 
-  var module = angular.module("ut.app", ["ngRoute", "ngAnimate", "ut.search", "ut.table", "ut.form"]);
+  var module = angular.module("ut.app", ["ngRoute", "ngAnimate", "ngMessages", "ut.search", "ut.table", "ut.form"]);
 
     var routes = [
       { url: "/", settings: { templateUrl: "template/landing.html" } },
