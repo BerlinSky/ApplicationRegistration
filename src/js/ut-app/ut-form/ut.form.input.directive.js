@@ -20,7 +20,7 @@
   };
 
   var appendMsg = function (form, element, elemName, $compile, scope) {
-    var message = "<div class='help-block' ng-messages='" +
+    var message = "<div class='help-block ut-help-block' ng-messages='" +
                     form.$name + "." + elemName + ".$error" + "' >" +
                     "<div ng-messages-include='form-messages'></div><div>";
     element.append($compile(message)(scope));
