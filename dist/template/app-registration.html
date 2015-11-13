@@ -400,9 +400,15 @@
             </tr>
          </tbody>
         </table>
-        
       </div>
+
+       <div class="container">
+        <pre>{{ modelTable.artistList | filter: {appId : model.selected.appId, firstName: model.search.firstName, lastName: model.search.lastName} | orderBy:orderByField:reverseSort | json }}</pre>
+      </div>
+
     </div>
+
+   
 
   </div>
   <!-- search ends -->
