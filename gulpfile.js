@@ -30,6 +30,7 @@ var config = {
 			'bower_components/d3/d3.min.js',
 			'bower_components/jquery.easing/jquery.easing.min.js',
 			'bower_components/angular/angular.js',
+			'bower_components/angular-ui-router/release/angular-ui-router.min.js',
 			'bower_components/angular-route/angular-route.min.js',
 			'bower_components/angular-animate/angular-animate.min.js',
 			'bower_components/angular-sanitize/angular-sanitize.min.js',
