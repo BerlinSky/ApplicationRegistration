@@ -31,6 +31,25 @@
   <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
+
+<style type="text/css">
+  
+  .axis path, axis line {
+    fill: none;
+    stroke: #999;
+    shape-rendering: crispEdges;
+  }
+
+  .tick {
+    font: 10px sans-serif;
+  }
+
+  circle {
+    fill: orangered;
+  }
+
+</style>
+
 </head>
 
 <body id="page-top">
@@ -43,6 +62,11 @@
   <header style="background-image: url(images/landing-4.jpg);" ng-include="'partial/header.html'"></header>
 
   <section id="app-attributes" ng-include="'partial/section-app-attributes.html'"></section>
+
+  <section ng-controller="UtVizController as model" style="border: 1px solid green;">
+    <!-- {{ model.logs }} -->
+    <ut-scatter-chart class="chart" data="model.logs"></ut-scatter-chart>
+  </section>
 
   <section id="building-blocks" ng-include="'partial/section-building-blocks.html'"></section>
 
@@ -57,6 +81,7 @@
 <!--place the JavaScript links at the bottom of the page-->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/d3.min.js"></script>
 <script src="js/jquery.easing.min.js"></script>
 
 <script src="js/angular.js"></script>
@@ -76,6 +101,12 @@
 
 <!-- app level bootstrapping -->
 <script src="js/ut-app/ut.app.module.js"></script>
+
+<!-- visualization component -->
+<script src="js/ut-app/ut-viz/ut.viz.module.js"></script>
+<script src="js/ut-app/ut-viz/ut.viz.controller.js"></script>
+<script src="js/ut-app/ut-viz/ut.viz.service.js"></script>
+<script src="js/ut-app/ut-viz/ut.viz.chart.directive.js"></script>
 
 <!-- search component -->
 <script src="js/ut-app/ut-search/ut.search.module.js"></script>
