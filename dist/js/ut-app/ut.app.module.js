@@ -4,8 +4,7 @@
   "use strict";
 
   var module = angular.module("ut.app", 
-    ["ngRoute", 
-    "ngAnimate", 
+    ["ngAnimate",
     "ui.router",
     "ngMessages", 
     "ut.search", 
