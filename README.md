@@ -1,0 +1,1 @@
+# Application Registration in Angular JS 
