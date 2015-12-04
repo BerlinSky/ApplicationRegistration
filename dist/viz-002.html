@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Visualization</title>
+</head>
+<body>
+
+	<svg width="800" height="500">
+
+	</svg>
+
+</body>
+
+  <script src="js/d3.js" charset="UTF-8"></script>
+
+	<script type="text/javascript">
+
+		function randPoint() {
+			var rand = Math.random;
+	  	
+	  	return  { x: rand()*10, y: rand()*10, r: rand() };
+		}
+
+  	var data = [];
+
+  	for (var i=0; i < 300; i++) {
+  		data.push(randPoint());
+  	}
+
+  	function draw() {
+	  	var svg = d3.select('svg');
+
+  		function key(d, i) {
+	  		return d.x + '#' + d.y;
+	  	}
+
+	  	// var svg = d3.select('svg');
+
+	  	// function key(d, i) {
+	  	// 	return d.x + '#' + d.y;
+	  	// }
+
+	  	var circles = svg.selectAll('circle').data(data, key);
+
+	  	circles.enter()
+	  	.append('circle')
+	  	.attr('r', function(d) { return d.r*10; })
+	  	.attr('cx', function(d) { return d.x*70 + 10; })
+	  	.attr('cy', function(d) { return d.y*40 + 10; });
+
+	  	circles
+			.attr('fill', function(d) {
+	  		return 'rgb(' + parseInt(d.r*250) + ',0,0)';
+	  	});
+
+		  circles.exit()
+	  	.remove();
+  	}
+
+  	setInterval (function() {
+  		data.shift();
+  		data.push(randPoint());
+  		draw();
+  	}, 150);
+  	
+  </script>
+
+</html>
+

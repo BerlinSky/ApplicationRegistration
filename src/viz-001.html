@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Visualization</title>
+</head>
+<body>
+
+<svg width="400" height="120">
+	<text x="10" y="40">
+		Some shapges
+	</text>
+
+	<rect class"item" id="first-item" width="100" height="50" x="0" y="50" /> 
+
+	<circle class"item" id="second-item" cx="150" 
+		cy="25" r="25"> 
+	</circle>
+
+	<line class="item" id="third-item" 
+		x2="400" y2="100" style="stroke:black">
+	</line>
+
+	</svg>
+
+</body>
+
+  <script src="js/d3.js" charset="UTF-8"></script>
+
+	<script type="text/javascript">
+  	var circle = d3.selectAll('circle');
+
+	 	var line = d3.selectAll('line');
+
+  	var first = d3.select('#first-item');
+
+	 	circle.attr("r", "50");
+
+  	circle.style('fill', 'red');
+  	line.style('stroke', 'red');
+
+  	first.remove();
+  	
+  </script>
+
+</html>
