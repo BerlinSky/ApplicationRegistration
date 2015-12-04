@@ -68,11 +68,13 @@
     model.submitForm = function() {
     	if(!model.currentArtist) {
     		createArtist();
+        toastr.success("Save the new record");
+
     	}
     	else{
     		updateArtist();
+        toastr.success("Save the change(s)");
     	}
-
      	resetForm();
     }
 

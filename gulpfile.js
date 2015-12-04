@@ -18,7 +18,8 @@ var config = {
 			'bower_components/bootstrap/dist/css/bootstrap.min.css',
 			'bower_components/font-awesome/css/font-awesome.min.css',
   		'bower_components/ui-select/dist/select.min.css',
-  		'bower_components/ng-tags-input/ng-tags-input.min.css'
+  		'bower_components/ng-tags-input/ng-tags-input.min.css',
+  		'bower_components/toastr/toastr.min.css'
   	],
   	font: [
   		'bower_components/font-awesome/fonts/*.*',
@@ -34,7 +35,8 @@ var config = {
 			'bower_components/angular-sanitize/angular-sanitize.min.js',
 			'bower_components/angular-messages/angular-messages.min.js',
 			'bower_components/ui-select/dist/select.min.js',
-			'bower_components/ng-tags-input/ng-tags-input.min.js'
+			'bower_components/ng-tags-input/ng-tags-input.min.js',
+			'bower_components/toastr/toastr.min.js'
   	],
 		js: './src/js/**/*.js',
 		src: './src',
@@ -114,5 +116,5 @@ gulp.task('watch', function() {
 	gulp.watch(config.path.src + '/**/*.html', ['html']);
 });
 
-gulp.task('default', ['image', 'css', 'sass', 'html', 'jslib', 'js', 'eslint', 'open', 'watch']);
+gulp.task('default', ['image', 'css', 'sass', 'html', 'jslib', 'js', 'open', 'watch']);
 
