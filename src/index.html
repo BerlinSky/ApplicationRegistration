@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="ut.app">
+<html>
 
 <head>
   <meta charset="utf-8">
@@ -53,30 +53,17 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" ng-app="ut.app">
 
   <!-- Navigation -->
   <nav ng-include="'partial/navigation.html'" class="navbar navbar-default navbar-fixed-top" role="navigation">
   </nav>
 
-  <!-- Header -->
-  <header style="background-image: url(images/landing.jpg);" ng-include="'partial/header.html'"></header>
+  <!-- <div ng-view></div> -->
 
-  <section id="app-attributes" ng-include="'partial/section-app-attributes.html'"></section>
+  <div ui-view></div>
 
-  <section ng-controller="UtVizController as model" style="border: 1px solid green;">
-    <!-- {{ model.logs }} -->
-    <ut-scatter-chart class="chart" data="model.logs"></ut-scatter-chart>
-  </section>
-
-  <section id="building-blocks" ng-include="'partial/section-building-blocks.html'"></section>
-
-  <section id="process-flow" ng-include="'partial/section-process-flow.html'"></section>
-
-  <section id="next-steps" ng-include="'partial/section-next-steps.html'"></section>
-
-  <div ng-view></div>
-
+  <!-- Footer -->
   <footer ng-include="'partial/footer.html'"></footer>
 
 <!--place the JavaScript links at the bottom of the page-->
@@ -87,6 +74,7 @@
 
 <script src="js/angular.js"></script>
 <script src="js/angular-route.min.js"></script>
+<script src="js/angular-ui-router.min.js"></script>
 
 <script src="js/angular-messages.min.js"></script>
 

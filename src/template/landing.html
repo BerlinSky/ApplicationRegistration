@@ -1,1 +1,16 @@
-<div>The main view</div>
+
+  <!-- Header -->
+  <header style="background-image: url(images/landing.jpg);" ng-include="'partial/header.html'"></header>
+
+  <section id="app-attributes" ng-include="'partial/section-app-attributes.html'"></section>
+
+  <section ng-controller="UtVizController as model" style="border: 1px solid green;">
+    <!-- {{ model.logs }} -->
+    <ut-scatter-chart class="chart" data="model.logs"></ut-scatter-chart>
+  </section>
+
+  <section id="building-blocks" ng-include="'partial/section-building-blocks.html'"></section>
+
+  <section id="process-flow" ng-include="'partial/section-process-flow.html'"></section>
+
+  <section id="next-steps" ng-include="'partial/section-next-steps.html'"></section>
