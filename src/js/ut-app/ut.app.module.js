@@ -7,6 +7,8 @@
     ["ngAnimate",
     "ui.router",
     "ngMessages", 
+    "ngSanitize",
+    "ui.select",
     "ut.search", 
     "ut.table", 
     "ut.form", 
@@ -20,13 +22,31 @@
             url: "/",
             templateUrl: "template/landing.html"
         })
-
-        // Registration  
         .state("registration", {
             url: "/registration",
             templateUrl: "template/app-registration.html",
             controller: "UtSearchController as model"
         })
+        .state("applicationList", {
+            url: "/applicationList",
+            templateUrl: "app/applicationList/appListView.html",
+            controller: "UtSearchController as model"
+        })
+       
+
+        //  // Registration  
+        // .state("registration", {
+        //     url: "/registration",
+        //     templateUrl: "template/app-registration.html",
+        //     controller: "UtSearchController as model"
+        // })
+
+        //  // Registration  
+        // .state("registration", {
+        //     url: "/registration",
+        //     templateUrl: "template/app-registration.html",
+        //     controller: "UtSearchController as model"
+        // })
     };
 
     module.config(["$stateProvider", "$urlRouterProvider", registerUiRoutes]);

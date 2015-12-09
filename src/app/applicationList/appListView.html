@@ -1,0 +1,41 @@
+<section id="" class="container-fluid">
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h2 class="section-heading">Application</h2>
+
+        <h3 class="section-subheading text-muted">(Registration and Record-keeping)</h3>
+      </div>
+    </div>
+
+    <div class="row ut-search-control">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+
+        <ui-select ng-model="model.selected" theme="bootstrap" ng-disabled="disabled">
+          <ui-select-match placeholder="Search/Select...">{{$select.selected.subAppName}}</ui-select-match>
+
+          <ui-select-choices 
+            repeat="application in model.applicationList | propsFilter: {subAppName: $select.search, appName: $select.search}">
+            <div ng-bind-html="application.subAppName | highlight: $select.search"></div>
+            <span>
+              Id: {{application.appId}}
+              <small ng-bind-html="''+application.appName | highlight: $select.search"></small>
+            </span>
+          </ui-select-choices>
+        </ui-select>
+        
+      </div>
+    </div>
+
+    <div>
+      <ul class="nav nav-tabs">
+          <li class="active"><a href="#">App Info</a></li>
+          <li><a href="#">Page List</a></li>
+          <li><a href="#">JSON</a></li>
+      </ul>
+    </div>
+  </div>
+	
+</section>>
