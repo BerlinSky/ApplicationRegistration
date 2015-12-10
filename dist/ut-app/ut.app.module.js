@@ -6,10 +6,9 @@
   var module = angular.module("ut.app", 
     ["ngAnimate",
     "ui.router",
-    "ui.bootstrap",
     "ngMessages", 
     "ngSanitize",
-    "ut.applist",
+    "ut.app.list",
     "ui.select",
     "ut.search", 
     "ut.table", 
@@ -31,26 +30,26 @@
         })
         .state("applicationList", {
           url: "/applicationList",
-          templateUrl: "js/ut-app/applicationList/appList.html",
+          templateUrl: "app/applicationList/appList.html",
           controller: "UtSearchController as model"
         })
        .state("registeredApp", {
           abstract: true,
-          url: "/applicationList/registered",
-          templateUrl: "js/ut-app/applicationList/appList.html",
-          controller: "UtAppListController as model"
+          url: "/applicationList/registered/:appId",
+          templateUrl: "app/applicationList/appList.html",
+          controller: "UtSearchController as model"
        })
        .state("registeredApp.info", {
           url: "/info",
-          templateUrl: "js/ut-app/applicationList/appInfo.html"
+          templateUrl: "app/applicationList/appInfo.html"
        })
        .state("registeredApp.pages", {
           url: "/pages",
-          templateUrl: "js/ut-app/applicationList/pageList.html"
+          templateUrl: "app/applicationList/appPageList.html"
        })
        .state("registeredApp.json", {
           url: "/json",
-          templateUrl: "js/ut-app/applicationList/appListJson.html"
+          templateUrl: "app/applicationList/appListJson.html"
        })
 
         //  // Registration  
