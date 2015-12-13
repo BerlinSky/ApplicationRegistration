@@ -40,7 +40,8 @@ var config = {
 			'bower_components/angular-messages/angular-messages.min.js',
 			'bower_components/ui-select/dist/select.min.js',
 			'bower_components/ng-tags-input/ng-tags-input.min.js',
-			'bower_components/toastr/toastr.min.js'
+			'bower_components/toastr/toastr.min.js',
+			'bower_components/angular-mocks/angular-mocks.js'
   	],
 		js: './src/js/**/*.js',
 		src: './src',
