@@ -1,1 +1,13 @@
-<div>This is the app list JSON page</div>
+<div class="container" ng-controller="UtTableController as modelTable" ng-show="model.selected || true">
+
+  <div class="row" ng-show="(model.selected === true || model.formEditMode === false) ? true : false">
+    <div class="col-xs-12">
+
+    
+
+     <div class="container">
+      <pre>{{ modelTable.artistList | filter: {appId : model.selected.appId, firstName: model.search.firstName, lastName: model.search.lastName} | orderBy:orderByField:reverseSort | json }}</pre>
+    </div>
+  </div>
+
+</div>
