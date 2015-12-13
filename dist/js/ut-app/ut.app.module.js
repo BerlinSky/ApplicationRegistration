@@ -34,24 +34,44 @@
           templateUrl: "js/ut-app/applicationList/appList.html",
           controller: "UtSearchController as model"
         })
-       .state("registeredApp", {
-          abstract: true,
-          url: "/applicationList/registered",
-          templateUrl: "js/ut-app/applicationList/appList.html",
-          controller: "UtAppListController as model"
-       })
-       .state("registeredApp.info", {
+        .state("applicationList.info", {
           url: "/info",
           templateUrl: "js/ut-app/applicationList/appInfo.html"
-       })
-       .state("registeredApp.pages", {
-          url: "/pages",
-          templateUrl: "js/ut-app/applicationList/pageList.html"
-       })
-       .state("registeredApp.json", {
-          url: "/json",
-          templateUrl: "js/ut-app/applicationList/appListJson.html"
-       })
+        })
+
+       // .state("registeredApp", {
+       //    abstract: true,
+       //    url: "/applicationList/registered",
+       //    templateUrl: "js/ut-app/applicationList/appList.html",
+       //    controller: "UtAppListController as model"
+       // })
+       // .state("registeredApp.info", {
+       //    url: "/info",
+       //    templateUrl: "js/ut-app/applicationList/appInfo.html"
+       // })
+       // .state("registeredApp.pages", {
+       //    url: "/pages",
+       //    templateUrl: "js/ut-app/applicationList/pageList.html"
+       // })
+       // .state("registeredApp.json", {
+       //    url: "/json",
+       //    templateUrl: "js/ut-app/applicationList/appListJson.html"
+       // })
+
+
+ // .state('home', {
+ //        url: '/home',
+ //        templateUrl: 'partial-home.html'
+ //    })
+
+ //    // nested list with custom controller
+ //    .state('home.list', {
+ //        url: '/list',
+ //        templateUrl: 'partial-home-list.html',
+ //        controller: function($scope) {
+ //            $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
+ //        }
+ //    })
 
         //  // Registration  
         // .state("registration", {
