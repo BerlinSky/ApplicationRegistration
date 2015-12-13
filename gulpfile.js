@@ -16,6 +16,7 @@ var config = {
 		sass: './src/sass/*.scss',
 		css: [
 			'bower_components/bootstrap/dist/css/bootstrap.min.css',
+			'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
 			'bower_components/font-awesome/css/font-awesome.min.css',
   		'bower_components/ui-select/dist/select.min.css',
   		'bower_components/ng-tags-input/ng-tags-input.min.css',
