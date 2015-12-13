@@ -10,6 +10,7 @@
     "ngMessages", 
     "ngSanitize",
     "ut.applist",
+    "ut.pageList", 
     "ui.select",
     "ut.search", 
     "ut.table", 
@@ -32,7 +33,7 @@
         .state("applicationList", {
           url: "/applicationList",
           templateUrl: "js/ut-app/applicationList/appList.html",
-          controller: "UtSearchController as model"
+          controller: "UtAppListController as model"
         })
         .state("applicationList.info", {
           url: "/info",
@@ -40,14 +41,18 @@
         })
         .state("applicationList.pages", {
           url: "/pages",
-          templateUrl: "js/ut-app/applicationList/pageList.html"
+          templateUrl: "js/ut-app/applicationPageList/pageList.html",
+          controller: "UtPageListController as modelTable"
         })
         .state("applicationList.json", {
           url: "/json",
-          templateUrl: "js/ut-app/applicationList/appListJson.html"
+          templateUrl: "js/ut-app/applicationPageList/pageListJson.html",
+          controller: "UtPageListController as modelTable"
         })
-
-       
+        .state("applicationList.form", {
+          url: "/json",
+          templateUrl: "js/ut-app/applicationList/appForm.html"
+        })
     };
 
     module.config(["$stateProvider", "$urlRouterProvider", registerUiRoutes]);
