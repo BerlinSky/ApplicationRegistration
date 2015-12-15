@@ -15,7 +15,9 @@
     "ut.search", 
     "ut.table", 
     "ut.form", 
-    "ut.viz"]);
+    "ut.viz",
+    // "ut.dataService",
+    "ut.applicationResourceMock"]);
 
     var registerUiRoutes = function($stateProvider, $urlRouterProvider) {
       $urlRouterProvider.otherwise("/");
