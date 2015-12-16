@@ -2,7 +2,7 @@
 
   "use strict";
 
-  var UtPageListController = function(tableDataService, $http, $log) {
+  var UtPageListController = function(tableDataServiceX, $http, $log) {
     var model = this;
 
     model.hobbyList = [

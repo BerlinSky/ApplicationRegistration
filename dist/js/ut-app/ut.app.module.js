@@ -24,10 +24,10 @@
           ["$delegate",
               function ($delegate) {
                   return function (exception, cause) {
-                      exception.message = "Please contact the Help Desk! \n Message: " +
+                      exception.message = "Please pay attention to this Error! \n Message: " +
                                                               exception.message;
                       $delegate(exception, cause);
-                      alert(exception.message);
+                      toastr.error(exception.message);
                   };
               }]);
   });
@@ -40,11 +40,6 @@
       url: "/",
       templateUrl: "template/landing.html"
     })
-    // .state("registration", {
-    //   url: "/registration",
-    //   templateUrl: "template/app-registration.html",
-    //   controller: "UtSearchController as model"
-    // })
     .state("applicationList", {
       url: "/applicationList",
       templateUrl: "js/ut-app/applicationList/appList.html",

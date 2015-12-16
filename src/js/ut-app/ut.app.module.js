@@ -27,7 +27,7 @@
                       exception.message = "Please pay attention to this Error! \n Message: " +
                                                               exception.message;
                       $delegate(exception, cause);
-                      alert(exception.message);
+                      toastr.error(exception.message);
                   };
               }]);
   });
