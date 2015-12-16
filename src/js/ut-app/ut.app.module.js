@@ -12,7 +12,7 @@
     "ut.applist",
     "ut.pageList", 
     "ui.select",
-    "ut.search", 
+    // "ut.search", 
     "ut.table", 
     "ut.form", 
     "ut.viz",
@@ -27,11 +27,11 @@
           url: "/",
           templateUrl: "template/landing.html"
         })
-        .state("registration", {
-          url: "/registration",
-          templateUrl: "template/app-registration.html",
-          controller: "UtSearchController as model"
-        })
+        // .state("registration", {
+        //   url: "/registration",
+        //   templateUrl: "template/app-registration.html",
+        //   controller: "UtSearchController as model"
+        // })
         .state("applicationList", {
           url: "/applicationList",
           templateUrl: "js/ut-app/applicationList/appList.html",

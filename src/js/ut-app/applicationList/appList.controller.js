@@ -9,14 +9,6 @@
     });
   }; 
 
-  // var UtAppListController = function(searchDataService) {
-  //   var model = this;
-
-  //   model.applicationList = {};
-  //   model.applicationList = searchDataService.applicationList;
-   
-  // };
-
   module.controller("UtAppListController", ["applicationResource", UtAppListController]);
 
 }(angular.module("ut.applist")));
